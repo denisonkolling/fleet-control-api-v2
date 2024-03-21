@@ -1,6 +1,10 @@
 package com.fleetcontrol.controller;
 
 import com.fleetcontrol.service.ImageService;
+
+import jakarta.validation.constraints.NotNull;
+
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +26,9 @@ public class ImageController {
         return new ResponseEntity<>(imageService.uploadImage(multipartImage), HttpStatus.CREATED);
     }
 
+    @GetMapping(value = "/image/{imageId}", produces = MediaType.IMAGE_JPEG_VALUE)
+    Resource downloadImage(@PathVariable Long imageId) throws Exception {
+        return imageService.downloadImage(imageId);
+    }
 
 }
