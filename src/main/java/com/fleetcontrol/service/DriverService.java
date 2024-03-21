@@ -4,6 +4,6 @@ import com.fleetcontrol.model.Driver;
 
 public interface DriverService {
 
-  Driver createDriver(Driver driver);
-  
+    Driver createDriver(Driver driver);
+
 }

@@ -25,11 +25,13 @@ public class Driver {
     private LocalDate birthday;
 
     private String nationality;
-    
+
     private String licenseId;
 
     private String licenseClass;
-    
+
     private LocalDate LicenseExpiryDate;
+
+    private String profileImageId;
 
 }

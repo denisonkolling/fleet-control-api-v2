@@ -8,15 +8,16 @@ import com.fleetcontrol.service.DriverService;
 @Service
 public class DriverServiceImpl implements DriverService {
 
-  private DriverRepository driverRepository;
+    private DriverRepository driverRepository;
 
-  public DriverServiceImpl(DriverRepository driverRepository) {
-    this.driverRepository = driverRepository;
-  }
+    public DriverServiceImpl(DriverRepository driverRepository) {
+        this.driverRepository = driverRepository;
+    }
 
-  @Override
-  public Driver createDriver(Driver driver) {
-    return driverRepository.save(driver);
-  }
+
+    @Override
+    public Driver createDriver(Driver driver) {
+        return driverRepository.save(driver);
+    }
 
 }
