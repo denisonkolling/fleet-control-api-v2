@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: fleet_control_v2
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '5433:5432'
+volumes:
+  postgres:
