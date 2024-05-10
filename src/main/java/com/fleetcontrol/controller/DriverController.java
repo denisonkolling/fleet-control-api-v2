@@ -1,7 +1,10 @@
 package com.fleetcontrol.controller;
 
-import com.fleetcontrol.model.Driver;
+import com.fleetcontrol.dto.DriverRequest;
 import com.fleetcontrol.service.DriverService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +20,8 @@ public class DriverController {
     }
 
     @PostMapping("/driver")
-    public ResponseEntity<?> createDriver(@RequestBody Driver driver) {
-        return new ResponseEntity<>(driverService.createDriver(driver), HttpStatus.CREATED);
+    public ResponseEntity<?> createDriver(@RequestBody @Valid DriverRequest driverRequest) {
+        return new ResponseEntity<>(driverService.createDriver(driverRequest), HttpStatus.CREATED);
     }
 
 }
